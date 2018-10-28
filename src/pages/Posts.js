@@ -20,7 +20,7 @@ const Posts = ({ match }) => {
             <Route exact path={match.url} render={() => <p>포스트를 선택하세요</p>}/>
             <Route exact path={`${match.url}/:id`} component={Post} />
         </div>
-    )
-}
+    );
+};
 
-export default Posts
+export default Posts;
