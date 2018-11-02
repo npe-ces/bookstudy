@@ -7,6 +7,9 @@ const mongoose = require('mongoose');
 
 const api = require('./api');
 
+const app = new Koa();
+const router = new Router();
+
 const {
     PORT: port = 4000, //값이 없으면 4000포트
     MONGO_URI: mongoURI
@@ -18,11 +21,6 @@ mongoose.connect(mongoURI, { useNewUrlParser: true }).then(() => {
 }).catch((e) => {
     console.error(e);
 });
-
-
-
-const app = new Koa();
-const router = new Router();
 
 //라우터 설정
 router.get('/', (ctx) => {
@@ -41,6 +39,7 @@ router.get('/posts', (ctx) => {
 router.use('/api', api.routes());
 
 app.use(bodyParser());
+//app 인스턴스에 라우터 적용
 app.use(router.routes()).use(router.allowedMethods());
 
 app.listen(port, () => {
