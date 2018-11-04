@@ -1,4 +1,4 @@
-@import 'utils';
+@import '../../../styles/utils.scss';
 .editor-template {
     .panes {
         height: calc(100vh - 4rem); // 페이지 높이에서 EditorHeader 크기 빼기    

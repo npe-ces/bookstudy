@@ -7,8 +7,10 @@ const middlewares = [penderMiddleware()];
 
 //개발모드일때만 redux devtools를 적용
 const isDev = process.env.NODE_ENV === 'development';
-const devtools = isDev && window.__REDUX_DEV_TOOLS_EXTENSION_COMPOSE__;
+const devtools = isDev && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 const composeEnhancers = devtools || compose;
+
+
 
 //preloadedState는 추후 서버사이드 렌더링을 했을 때 전달받는 초기 상태입니다.
 const configulation = (preloadedState) => 
