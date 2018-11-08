@@ -1,19 +1,19 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import App from './components/App';
+import App from 'components/App';
 import { Provider } from 'react-redux';
-import configulation from './store/configulation';
+import configure from 'store/configure';
 
-const store = configulation();
+const store = configure();
 
 const Root = () => {
-    return (
-        <Provider store={store}>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </Provider>
-    )
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <App/>
+      </BrowserRouter>
+    </Provider>
+  );
 }
 
 export default Root;

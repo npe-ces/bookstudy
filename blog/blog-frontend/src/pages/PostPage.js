@@ -6,10 +6,10 @@ import PostBody from 'components/post/PostBody';
 const PostPage = () => {
   return (
     <PageTemplate>
-      <PostInfo />
+      <PostInfo/>
       <PostBody/>
     </PageTemplate>
-  )
-}
+  );
+};
 
-export default PostPage
+export default PostPage;
